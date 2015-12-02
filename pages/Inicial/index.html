@@ -34,12 +34,29 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
+    <![endif]-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 
 <body>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["map"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Name'],
+            ['Prefeitura Municipal de Tuparetama,Tuparetama,pe', '','Work'],
+            ['Prefeitura Municipal de Ipojuca,Ipojuca,pe', '','Work'],
+            ['Departamento de Estradas de Rodagem do Estado de Pernambuco,Caruaru,pe', '','Work']
 
+        ]);
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+        map.draw(data, {showTip: true});
+    }
+
+</script>
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -256,7 +273,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="../Login/login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -499,7 +516,8 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="morris-area-chart"></div>
+                            <!--<div id="morris-area-chart"></div>-->
+                            <div id="map_div" style="width: 400px; height: 300px"></div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
