@@ -6,7 +6,7 @@
         "FIREBASE_URL": "https://euinspetor.firebaseio.com"
     });
 
-    angular.module('insta').run(function ($rootScope, $location) {
+    angular.module('mwa').run(function ($rootScope, $location) {
         $rootScope.user = null;
 
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
