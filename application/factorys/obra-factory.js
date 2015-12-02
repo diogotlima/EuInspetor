@@ -10,7 +10,7 @@
 
     function ObraFactory($http, SETTINGS) {
 
-        var connection = new FireBase(SETTINGS.url());
+        var connection = new FireBase(SETTINGS.url);
 
         return {
             obras: getDenunciasObras
