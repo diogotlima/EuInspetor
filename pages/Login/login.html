@@ -1,58 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+<body class="teal darken-4">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+        <div id="container">
 
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form" ng-submit="vm.submit()">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control"
-                                           ng-model="vm.login.email"
-                                           ng-minlength="5"
-                                           ng-maxlength="160"
-                                           type="text"
-                                           id="email"
-                                           name="email"
-                                           placeholder="Usuario"
-                                           autofocus
-                                           required />
-                                </div>
-                                <div class="form-group">
-                                    <input placeholder="Password"
-                                            ng-model="vm.login.password"
-                                            ng-minlength="6"
-                                            ng-maxlength="20"
-                                            type="password"
-                                            class="form-control"
-                                            id="password"
-                                            name="password"
-                                            required />>
-                                </div>
-                                <a type="submit" class="btn btn-lg btn-success btn-block">Login</a>
-                            </fieldset>
-                        </form>
-                    </div>
+            <div class="row">
+                <div class="input-field col s12 center">
+                    <div id="testDrive" class="icon-suitcase2"></div>
+                    <p class="center titulo-font">Eu, inspetor</p>
                 </div>
             </div>
+
+            <form role="form" ng-submit="vm.submit()">
+
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="mdi-social-person-outline prefix"></i>
+                        <input class="form-control"
+                               ng-model="vm.login.email"
+                               ng-minlength="5"
+                               ng-maxlength="160"
+                               type="text"
+                               id="email"
+                               name="email"
+                               placeholder="Usuario"
+                               autofocus
+                               required />
+                        <label for="email" />
+                    </div>
+                </div>
+
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-lock-outline prefix"></i>
+                        <input placeholder="Password"
+                               ng-model="vm.login.password"
+                               ng-minlength="6"
+                               ng-maxlength="20"
+                               type="password"
+                               class="form-control"
+                               id="password"
+                               name="password"
+                               placeholder="Senha"
+                               required />
+                        <label for="password" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button id="btnLogin" class="btn waves-effect waves-light col s12" type="submit">Entrar</button>
+                    </div>
+                </div>
+
+            </form>
+
         </div>
     </div>
+</div>
+
 </body>
-</html>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        console.log( "ready!" );
+        $("body").addClass("teal");
+        $("#login-page").addClass("teal");
+    });
+</script>
