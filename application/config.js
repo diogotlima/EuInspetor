@@ -9,7 +9,7 @@
         'VERSION': '0.0.1',
         'CURR_ENV': 'dev',
         'AUTH_USER': 'mwa-user',
-        'SERVICE_URL': 'https://euinspetor.firebaseio.com'
+        'SERVICE_URL': 'https://euinspetor.firebaseio.com/users'
     });
 
     angular.module('mwa').run(function ($rootScope, $location, SETTINGS) {
