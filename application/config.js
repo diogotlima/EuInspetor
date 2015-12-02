@@ -12,10 +12,13 @@
         'SERVICE_URL': 'https://euinspetor.firebaseio.com/users'
     });
 
+    angular.module('mwa').run(function ($rootScope, $location, SETTINGS) {
 
-    $rootScope.$on("$routeChangeStart", function (event, next, current) {
-        if ($rootScope.user == null) {
-            $location.path('/login');
-        }
+
+        $rootScope.$on("$routeChangeStart", function (event, next, current) {
+            if ($rootScope.user == null) {
+                $location.path('/login');
+            }
+        });
     });
 })();

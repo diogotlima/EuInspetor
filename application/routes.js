@@ -9,22 +9,22 @@
             .when('/', {
                 controller: 'HomeController',
                 controllerAs: 'vm',
-                templateUrl: 'pages/home/home.html'
+                templateUrl: 'home/index.html'
             })
             .when('/login', {
                 controller: 'LoginController',
                 controllerAs: 'vm',
-                templateUrl: 'pages/account/login.html'
+                templateUrl: 'Login/login.html'
             })
             .when('/logout', {
                 controller: 'LogoutController',
                 controllerAs: 'vm',
-                templateUrl: 'pages/account/login.html'
+                templateUrl: 'Login/login.html'
             })
-            .when('/timeline', {
+            .when('/TimeLine', {
                 controller: 'ProductCreateCtrl',
                 controllerAs: 'vm',
-                templateUrl: 'pages/timeline/timeline.html'
+                templateUrl: 'TimeLine/index.html'
             });
 
     });
