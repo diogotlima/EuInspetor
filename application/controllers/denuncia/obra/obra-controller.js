@@ -25,5 +25,21 @@
                 toastr.error(error.data.error_description, 'Falha na obtenção de denúncias relacionadas à obras.');
             }
         }
+
+        function setRespostaDenunciasObras() {
+            var resposta = $('RespostaTCE').val();
+
+            ObraFactory.setRespostaDenunciasObras(resposta)
+                .success(success)
+                .catch(fail);
+
+            function success(response) {
+                $location.path('/');
+            }
+
+            function fail(error) {
+                toastr.error(error.data.error_description, 'Falha no momento de inserir a resposta.');
+            }
+        }
     };
 })();

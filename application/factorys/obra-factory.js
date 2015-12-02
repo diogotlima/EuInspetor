@@ -10,7 +10,7 @@
 
     function ObraFactory($http, SETTINGS) {
 
-        var connection = new FireBase(SETTINGS.url);
+        var connection = new FireBase(SETTINGS.SERVICE_URL);
 
         return {
             obras: getDenunciasObras
@@ -28,6 +28,11 @@
             return DenunciaTexto;
         }
 
+        function setRespostaDenunciasObras(resposta) {
+            var RespostaTexto;
+            RespostaTexto = resposta;
 
+            this.connection.set({ RespostaTCE: RespostaTCE });
+        }
     }
 })();
