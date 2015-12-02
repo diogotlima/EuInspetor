@@ -28,11 +28,14 @@
             return DenunciaTexto;
         }
 
-        function setRespostaDenunciasObras(resposta) {
+        function setRespostaDenunciasObras(resposta, id) {
             var RespostaTexto;
+            var connectionUser = connection.child(id);
             RespostaTexto = resposta;
 
-            this.connection.set({ RespostaTCE: RespostaTCE });
+            connectionUser.update({
+                "RespostaTexto": RespostaTexto
+            });
         }
     }
 })();

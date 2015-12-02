@@ -28,8 +28,9 @@
 
         function setRespostaDenunciasObras() {
             var resposta = $('RespostaTCE').val();
+            var id = $('Id').val();
 
-            ObraFactory.setRespostaDenunciasObras(resposta)
+            ObraFactory.setRespostaDenunciasObras(resposta, id)
                 .success(success)
                 .catch(fail);
 
