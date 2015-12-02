@@ -5,20 +5,23 @@
     'use strict';
     angular.module('mwa').factory('LoginFactory', LoginFactory);
 
-    LoginFactory.$inject = ['$http', 'SETTINGS'];
+    LoginFactory.$inject = ['$firebaseAuth', 'SETTINGS'];
 
-    function LoginFactory($http, SETTINGS) {
+    function LoginFactory($firebaseAuth, SETTINGS) {
         return {
             login: login
         };
 
-        function login(data) {
-            var dt = "grant_type=password&username=" + data.email + "&password=" + data.password;
-            var url = SETTINGS.SERVICE_URL + 'api/security/token';
-            var header = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } };
 
-            return $http.post(url, dt, header);
+        function login(data) {
+
+            var url = SETTINGS.SERVICE_URL ;
+            var fbAuth = $firebaseAuth(url);
+            return fbAuth.$authWithPassword({ email:data.email ,password: data.password});
+
+
         }
+
 
 
     }
