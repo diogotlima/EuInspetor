@@ -30,6 +30,13 @@
     color: #376379;
 }
 
+.icon-suitcase2-white:before {
+    content: "\e900";
+    font-size: 25px;
+    color: white;
+}
+
+
 a.navbar-brand div {
     float: left;
 }
