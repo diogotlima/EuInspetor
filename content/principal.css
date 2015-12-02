@@ -1,0 +1,209 @@
+﻿@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?223mhb');
+    src:url('../fonts/icomoon.eot?223mhb#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?223mhb') format('truetype'),
+    url('../fonts/icomoon.woff?223mhb') format('woff'),
+    url('../fonts/icomoon.svg?223mhb#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-suitcase2:before {
+    content: "\e900";
+    font-size: 90px;
+    color: #376379;
+}
+
+a.navbar-brand div {
+    float: left;
+}
+
+.titulo-font {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    margin: 0;
+    color: #376379;
+}
+
+.panel-title div {
+    font-size: 24px;
+    display: inline-block;
+}
+
+.panel-title {
+    text-align: center;
+}
+
+
+.btn, .btn-large, .tabs .indicator {
+    background-color: #2A4A5A !important;
+}
+
+    .btn:hover, .btn-large:hover {
+        background-color: #3e7c91 !important
+    }
+
+.tabs .tab a:hover {
+    color: #3e7c91 !important;
+}
+
+.verde-tribunal, nav, footer.page-footer {
+    background-color: #2A4A5A !important;
+}
+
+.verde-escuro {
+    background-color: #2A4A5A !important;
+}
+
+.verde-claro {
+    background-color: #3e7c91 !important;
+}
+
+.tabs .tab a {
+    color: #3e7c91 !important;
+}
+
+#dropdown1 {
+    top: 64px !important;
+}
+
+    #dropdown1 li a i {
+        line-height: inherit;
+        width: 2rem;
+        font-size: 1.6rem;
+        display: block;
+        float: left;
+        text-align: center;
+        margin-right: 1rem;
+    }
+
+    #dropdown1 li {
+        padding: 0 !important;
+    }
+
+.altura-menu li {
+    height: 100%;
+}
+
+#dropdown1 li a {
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    padding: 10px;
+    color: #444;
+}
+
+.dropdown-button {
+    line-height: 23px;
+    padding: 10px;
+}
+
+.tabs .tab {
+    width: 15% !important;
+}
+
+.tirar-padding {
+    padding: 0 1rem !important;
+    position: initial !important;
+}
+
+.botao-pesquisa-padding {
+    padding-top: 25px !important;
+}
+
+.botao-editar-remover {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.loading {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    display: none;
+}
+
+.modal {
+    width: 25% !important;
+    top: 30% !important;
+    z-index: 9001;
+}
+
+.modal-detail {
+    width: 55% !important;
+    top: 10% !important;
+}
+
+.background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: rgb(255, 255, 255);
+}
+
+.menu-perfil {
+    width: 100% !important;
+    margin-right: 64px !important;
+}
+
+#listaAcoes {
+    padding: 0 0.75rem;
+}
+
+.group-title {
+    font-size: 1.2rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid #5F5F5F;
+    line-height: 1.804rem;
+    margin: 0.82rem 0 0.656rem 0;
+    font-weight: 400;
+}
+
+.group-section {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.group-information {
+    padding-bottom: 15px;
+}
+
+.outroProvidencia, .outroFuncionamento, .outraArea {
+    display: none;
+}
+
+#lean-overlay {
+    position: fixed;
+    z-index: 999;
+    top: -100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    display: none;
+    will-change: opacity;
+}

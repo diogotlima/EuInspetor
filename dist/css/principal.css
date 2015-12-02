@@ -26,6 +26,7 @@
 
 .icon-suitcase2:before {
     content: "\e900";
+    font-size: 90px;
 }
 
 a.navbar-brand div {
@@ -36,4 +37,13 @@ a.navbar-brand div {
     font-family: 'Lobster', cursive;
     padding-left: 10px;
     font-size: 24px;
+}
+
+.panel-title div {
+    font-size: 24px;
+    display: inline-block;
+}
+
+.panel-title {
+    text-align: center;
 }
