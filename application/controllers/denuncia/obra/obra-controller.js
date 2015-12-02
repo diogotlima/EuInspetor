@@ -9,6 +9,21 @@
     ObraController.$inject = ['$location', '$rootScope', 'SETTINGS', 'ObraFactory'];
 
     function ObraController($location, $rootScope, SETTINGS, ObraFactory) {
+        function getDenunciasObras() {
+            var obras;
 
+            obras: ObraFactory.getDenunciasObras()
+                        .success(success)
+                        .catch(fail);
+
+            function success(response) {
+                $rootScope.obras = obras;
+                $location.path('/');
+            }
+
+            function fail(error) {
+                toastr.error(error.data.error_description, 'Falha na obtenção de denúncias relacionadas à obras.');
+            }
+        }
     };
 })();
