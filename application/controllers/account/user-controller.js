@@ -5,9 +5,9 @@
     'use strict';
     angular.module('mwa').controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', '$rootScope', 'SETTINGS', 'LoginFactory'];
+    LoginController.$inject = ['$rootScope', 'LoginFactory'];
 
-    function LoginController($location, $rootScope, SETTINGS, LoginFactory) {
+    function LoginController($rootScope, LoginFactory) {
         var vm = this;
         vm.login = {
             email: '',
@@ -36,3 +36,4 @@
         }
     };
 })();
+
