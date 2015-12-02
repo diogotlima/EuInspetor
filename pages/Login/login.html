@@ -37,61 +37,53 @@
                 </div>
             </div>
 
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="mdi-social-person-outline prefix"></i>
-                    <input type="text" name="login" id="login" placeholder="Login"/>
-                    <label for="login">
-                </div>
-            </div>
+            <form role="form" ng-submit="vm.submit()">
 
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="mdi-action-lock-outline prefix"></i>
-                    <input type="password" id="password" placeholder="Senha" />
-                    <label for="password">
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="mdi-social-person-outline prefix"></i>
+                        <input class="form-control"
+                               ng-model="vm.login.email"
+                               ng-minlength="5"
+                               ng-maxlength="160"
+                               type="text"
+                               id="email"
+                               name="email"
+                               placeholder="Usuario"
+                               autofocus
+                               required />
+                        <label for="email" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <button id="btnLogin" class="btn waves-effect waves-light col s12" type="submit">Entrar</button>
+                <div class="row margin">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-lock-outline prefix"></i>
+                        <input placeholder="Password"
+                               ng-model="vm.login.password"
+                               ng-minlength="6"
+                               ng-maxlength="20"
+                               type="password"
+                               class="form-control"
+                               id="password"
+                               name="password"
+                               placeholder="Senha"
+                               required />
+                        <label for="password" />
+                    </div>
                 </div>
-            </div>
 
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button id="btnLogin" class="btn waves-effect waves-light col s12" type="submit">Entrar</button>
+                    </div>
+                </div>
+
+            </form>
 
         </div>
     </div>
 </div>
-
-<form role="form" ng-submit="vm.submit()">
-    <fieldset>
-        <div class="form-group">
-            <input class="form-control"
-                   ng-model="vm.login.email"
-                   ng-minlength="5"
-                   ng-maxlength="160"
-                   type="text"
-                   id="email"
-                   name="email"
-                   placeholder="Usuario"
-                   autofocus
-                   required />
-        </div>
-        <div class="form-group">
-            <input placeholder="Password"
-                   ng-model="vm.login.password"
-                   ng-minlength="6"
-                   ng-maxlength="20"
-                   type="password"
-                   class="form-control"
-                   id="password"
-                   name="password"
-                   required />>
-        </div>
-        <a type="submit" class="btn btn-lg btn-success btn-block">Login</a>
-    </fieldset>
-</form>
 
 </body>
 
