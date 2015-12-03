@@ -2,7 +2,6 @@
     'use strict';
     angular.module('mwa').controller('LoginController', LoginController);
 
-<<<<<<< HEAD
     LoginController.$inject = ['$scope', '$rootScope', '$firebaseAuth','$location', 'APP_SETTINGS'];
 
     function LoginController($scope, $rootScope, $firebaseAuth , $location, APP_SETTINGS) {
@@ -10,33 +9,29 @@
         var ref = new Firebase(APP_SETTINGS.FIREBASE_URL);
 
     vm.login =  {
-    email: '',
-    password: ''}
+    email: 'contato@andycastro.com.br',
+    password: '123'}
 
         vm.autenticacao = Login;
         vm.logout = logout;
         vm.navigate = navigate;
-=======
-    LoginController.$inject = ['$scope', '$rootScope', '$firebaseSimpleLogin'];
 
-
->>>>>>> origin/master
-
-
-<<<<<<< HEAD
+        activate();
+''
         function activate() {
         }
 
         function Login() {
+            alert(vm.login);
             ref.authWithPassword(vm.login, function(error, authData) {
                 if (error) {
                     console.log("Falha no login!!", error);
-                    alert(vm.login);
+
                 }else{
                     $rootScope.user = {
                         email: vm.login.email
                     };
-                    $location.path('/');
+                    $location.path('/obras');
                     $scope.$apply();
                     alert(email);
                 }
@@ -44,38 +39,16 @@
                 scope: "email"
             });
         }
-=======
-    function LoginController($scope, $rootScope, $firebaseSimpleLogin) {
-        var firebaseObj = new Firebase('https://euinspetor.firebaseio.com');
-        var loginObj = $firebaseSimpleLogin(firebaseObj);
 
-        $scope.user = {};
-        $scope.SignIn = function(e){
-            e.preventDefault();
-            var username = $scope.user.email;
-            var password = $scope.user.password;
-            loginObj.$login('password', {
-                    email: username,
-                    password: password
-                })
-                .then(function(user) {
-                    //Success callback
-                    console.log('Authentication successful');
-                }, function(error) {
-                    //Failure callback
-                    console.log('Authentication failure');
->>>>>>> origin/master
-
-                })
+        function logout() {
+            ref.unauth();
+            $rootScope.user = null;
+            localStorage.removeItem("firebase:session::5517");
+            $location.path('/login');
         }
 
-<<<<<<< HEAD
         function navigate(path) {
             $location.path(path + '/');
         }
     }
 })();
-=======
-    };
-})();
->>>>>>> origin/master
