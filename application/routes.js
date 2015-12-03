@@ -9,7 +9,7 @@
             .when('/', {
                 controller: 'HomeController',
                 controllerAs: 'vm',
-                templateUrl: 'home/index.html'
+                templateUrl: 'Inicial/index.html'
             })
             .when('/login', {
                 controller: 'LoginController',
@@ -31,6 +31,7 @@
                 controllerAs: 'vm',
                 templateUrl: 'TimeLine/index.html'
             });
+
 
     });
 })();

@@ -31,7 +31,7 @@
                     $rootScope.user = {
                         email: vm.login.email
                     };
-                    $location.path('/inicial');
+                    $location.path('/');
                     $scope.$apply();
                     alert(email);
                 }
