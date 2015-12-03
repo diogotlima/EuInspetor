@@ -3,5 +3,5 @@
  */
 (function () {
     'use strict';
-    angular.module('mwa', ['ngRoute']);
+    angular.module('mwa', ['ngRoute', 'firebase']);
 })();
