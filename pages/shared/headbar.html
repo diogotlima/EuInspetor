@@ -50,15 +50,16 @@
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold">
                             <a class="collapsible-header waves-effect waves-cyan">
-                                <i class="mdi-editor-publish"></i>
-                                Páginas
+                                <i class="mdi-editor-insert-chart"></i>
+                                Indicadores
                             </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" onclick="alert('')">Indicadores</a></li>
-                                    <li><a href="#" onclick="alert('')">Denúncias</a></li>
-                                </ul>
-                            </div>
+
+                        </li>
+                        <li class="bold">
+                            <a class="collapsible-header waves-effect waves-cyan">
+                                <i class="mdi-action-announcement"></i>
+                                Denúncias
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -66,6 +67,7 @@
         </aside>
 
         <section id="content">
+            <div ng-include="'Timeline/index.html'"></div>
         </section>
 
     </div>
