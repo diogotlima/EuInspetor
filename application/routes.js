@@ -7,9 +7,14 @@
     angular.module('mwa').config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'HomeController',
+                controller: 'InicialController',
                 controllerAs: 'vm',
-                templateUrl: 'home/index.html'
+                templateUrl: 'Inicial/index.html'
+            })
+            .when('/indicadores', {
+                controller: 'IndicadoresController',
+                controllerAs: 'vm',
+                templateUrl: 'Inicial/index.html'
             })
             .when('/login', {
                 controller: 'LoginController',
@@ -31,6 +36,7 @@
                 controllerAs: 'vm',
                 templateUrl: 'TimeLine/index.html'
             });
+
 
     });
 })();
