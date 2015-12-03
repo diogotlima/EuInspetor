@@ -24,7 +24,7 @@
                     <div class="input-field col s12">
                         <i class="mdi-social-person-outline prefix"></i>
                         <input class="form-control"
-                               ng-model="vm.login.email"
+                               ng-model="user.email"
                                ng-minlength="5"
                                ng-maxlength="160"
                                type="text"
@@ -40,7 +40,12 @@
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="mdi-action-lock-outline prefix"></i>
+<<<<<<< HEAD
                         <input ng-model=vm.login.password
+=======
+                        <input placeholder="Password"
+                               ng-model="user.password"
+>>>>>>> origin/master
                                ng-minlength="6"
                                ng-maxlength="20"
                                type="password"
@@ -55,7 +60,11 @@
 
                 <div class="row">
                     <div class="input-field col s12">
+<<<<<<< HEAD
                         <button id="btnLogin" class="btn waves-effect waves-light col s12" ng-click="vm.autenticacao()"> Entra</button>
+=======
+                        <button id="btnLogin" class="btn waves-effect waves-light col s12" ng-click="SignIn($event)">Entrar</button>
+>>>>>>> origin/master
                     </div>
                 </div>
 

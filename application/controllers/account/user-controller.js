@@ -2,6 +2,7 @@
     'use strict';
     angular.module('mwa').controller('LoginController', LoginController);
 
+<<<<<<< HEAD
     LoginController.$inject = ['$scope', '$rootScope', '$firebaseAuth','$location', 'APP_SETTINGS'];
 
     function LoginController($scope, $rootScope, $firebaseAuth , $location, APP_SETTINGS) {
@@ -15,9 +16,14 @@
         vm.autenticacao = Login;
         vm.logout = logout;
         vm.navigate = navigate;
+=======
+    LoginController.$inject = ['$scope', '$rootScope', '$firebaseSimpleLogin'];
 
-        activate();
 
+>>>>>>> origin/master
+
+
+<<<<<<< HEAD
         function activate() {
         }
 
@@ -38,16 +44,38 @@
                 scope: "email"
             });
         }
+=======
+    function LoginController($scope, $rootScope, $firebaseSimpleLogin) {
+        var firebaseObj = new Firebase('https://euinspetor.firebaseio.com');
+        var loginObj = $firebaseSimpleLogin(firebaseObj);
 
-        function logout() {
-            ref.unauth();
-            $rootScope.user = null;
-            localStorage.removeItem("firebase:session::5517");
-            $location.path('/login');
+        $scope.user = {};
+        $scope.SignIn = function(e){
+            e.preventDefault();
+            var username = $scope.user.email;
+            var password = $scope.user.password;
+            loginObj.$login('password', {
+                    email: username,
+                    password: password
+                })
+                .then(function(user) {
+                    //Success callback
+                    console.log('Authentication successful');
+                }, function(error) {
+                    //Failure callback
+                    console.log('Authentication failure');
+>>>>>>> origin/master
+
+                })
         }
 
+<<<<<<< HEAD
         function navigate(path) {
             $location.path(path + '/');
         }
     }
 })();
+=======
+    };
+})();
+>>>>>>> origin/master

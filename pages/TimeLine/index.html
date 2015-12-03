@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="mwa">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+    <h1>Obras</h1>
+    <ul ng-controller="ObraController as oc">
+        <li ng-repeat="obra in obras">
+            {{ obra.DenunciaTexto }}
+        </li>
+    </ul>
 </body>
 </html>

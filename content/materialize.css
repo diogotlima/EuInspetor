@@ -5597,7 +5597,7 @@ small {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 20px; }
     .card .card-action a {
-      color: #ffab40;
+      color: #2A4A5A;
       margin-right: 20px;
       -webkit-transition: color .3s ease;
       -moz-transition: color .3s ease;
@@ -5606,7 +5606,7 @@ small {
       transition: color .3s ease;
       text-transform: uppercase; }
       .card .card-action a:hover {
-        color: #ffd8a6; }
+        color: #3890a3; }
   .card .card-reveal {
     padding: 20px;
     position: absolute;
