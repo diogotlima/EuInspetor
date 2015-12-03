@@ -9,9 +9,14 @@
 </head>
 <body>
 
-<div ng-include="'shared/headbar.html'"></div>
-<div ng-view></div>
 
+<div ng-show="user">
+    <div ng-include="'shared/headbar.html'"></div>
+</div>
+
+<div ng-hide="user">
+    <div ng-view></div>
+</div>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="../bower_components/angular/angular.js"></script>
