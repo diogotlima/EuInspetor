@@ -9,7 +9,8 @@ As denúncias enviadas pela sociedade constarão em uma timeline para que outras
 Funcionalidades
 -------
 
-* Denunciar
+* Denunciar uma irregularidade
+* Priorizar denúncias mais relevantes, de acordo com o número de curtidas do app
 * Responder a denúncia
 
 Instalação
