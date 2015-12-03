@@ -9,6 +9,13 @@
     <ul ng-controller="HomeController as hc">
         <li ng-repeat="denuncia in denuncias">
             {{ $index }}: {{ denuncia.denunciaTexto[0].DenunciaTexto }}
+            <br>
+            Tipo da denúncia (L -> Licitações, O -> Obras, T -> Transporte): {{ denuncia.denunciaTipo[0].tipoDenuncia }}
+            <br>
+            Concordam: {{ denuncia.concordam[0].curtidas }}
+            <br>
+            Discordam: {{ denuncia.discordam[0].naoCurtidas }}
+            <br><br>
         </li>
     </ul>
 </body>

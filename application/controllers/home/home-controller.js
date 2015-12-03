@@ -33,12 +33,10 @@
 
                 connection.child("users").on("value", function(snapshot) {
                     DatabaseResults = snapshot.val();
-                    DenunciaTexto = DatabaseResults;
                 }, function (errorObject) {
                     console.log("The read failed: " + errorObject.code);
                 });
-                console.log(DenunciaTexto);
-                return DenunciaTexto;
+                return DatabaseResults;
             }
         }
     };
