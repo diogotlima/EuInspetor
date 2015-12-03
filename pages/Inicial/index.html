@@ -1,1 +1,46 @@
-teste
+<div class=" grey lighten-3">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">Páginas</a>
+                    </li>
+                    <li class="active">Denúncias</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul id="tabs" class="tabs z-depth-1">
+    <li class="tab col s3">
+        <a class="active" href="#form" id="tituloTab">Denúncias</a>
+    </li>
+</ul>
+
+<div class="container" ng-controller="IndicadoresController as ic">
+    <div class="section" ng-repeat="denuncia in denuncias">
+        <div id="consulta" class="row">
+
+            <div class="col l6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../content/images/sample-1.jpg" alt="sample image">
+                        <!--<span class="card-title">Card Title</span>-->
+                    </div>
+                    <div class="card-content">
+                        <p>{{ $index }}: {{ denuncia.denunciaTexto[0].DenunciaTexto }}</p>
+                    </div>
+                    <div class="card-action">
+
+                        <a href="#"><i class="mdi-action-thumb-up"></i> Concordam ({{ denuncia.concordam[0].curtidas }})</a>
+                        <a href="#"><i class="mdi-action-thumb-down"></i> Discordam ({{denuncia.discordam[0].naoCurtidas}}) </a>
+                        <a href="#"><i class="mdi-communication-message"></i> Comentar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

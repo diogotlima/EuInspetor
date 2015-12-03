@@ -7,7 +7,12 @@
     angular.module('mwa').config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'HomeController',
+                controller: 'InicialController',
+                controllerAs: 'vm',
+                templateUrl: 'Inicial/index.html'
+            })
+            .when('/indicadores', {
+                controller: 'IndicadoresController',
                 controllerAs: 'vm',
                 templateUrl: 'Inicial/index.html'
             })
