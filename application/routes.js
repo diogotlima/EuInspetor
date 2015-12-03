@@ -31,11 +31,7 @@
                 controllerAs: 'vm',
                 templateUrl: 'Login/login.html'
             })
-            .when('/TimeLine', {
-                controller: 'ProductCreateCtrl',
-                controllerAs: 'vm',
-                templateUrl: 'TimeLine/index.html'
-            });
+
 
 
     });

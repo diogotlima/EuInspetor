@@ -22,7 +22,7 @@
         }
 
         function Login() {
-            alert(vm.login);
+
             ref.authWithPassword(vm.login, function(error, authData) {
                 if (error) {
                     console.log("Falha no login!!", error);
@@ -33,7 +33,7 @@
                     };
                     $location.path('/indicadores');
                     $scope.$apply();
-                    alert(email);
+
                 }
             }, {
                 scope: "email"
