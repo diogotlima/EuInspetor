@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Obras</h1>
-    <ul ng-controller="ObraController as oc">
-        <li ng-repeat="obra in obras">
-            {{ $index }}: {{ obra.denunciaTexto[0].DenunciaTexto }}
+    <h1>Denúncias</h1>
+    <ul ng-controller="HomeController as hc">
+        <li ng-repeat="denuncia in denuncias">
+            {{ $index }}: {{ denuncia.denunciaTexto[0].DenunciaTexto }}
         </li>
     </ul>
 </body>

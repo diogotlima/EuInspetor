@@ -4,9 +4,9 @@
 (function () {
     'use strict';
     angular.module('mwa').controller('HomeController', HomeController);
-    HomeController.$inject = [];
+    HomeController.$inject = ['$location', '$rootScope', 'APP_SETTINGS'];
 
-    function HomeController() {
+    function HomeController($location, $rootScope, APP_SETTINGS) {
 
         var vm = this;
         activate();
@@ -14,6 +14,32 @@
 
         function activate() {
 
+        }
+
+        var denuncias;
+        getDenuncias();
+
+
+        function getDenuncias() {
+
+            var connection = new Firebase(APP_SETTINGS.FIREBASE_URL);
+            denuncias = getListDenuncias();
+
+            $rootScope.denuncias = denuncias;
+
+            function getListDenuncias() {
+                var DenunciaTexto;
+                var DatabaseResults;
+
+                connection.child("users").on("value", function(snapshot) {
+                    DatabaseResults = snapshot.val();
+                    DenunciaTexto = DatabaseResults;
+                }, function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                });
+                console.log(DenunciaTexto);
+                return DenunciaTexto;
+            }
         }
     };
 })();
