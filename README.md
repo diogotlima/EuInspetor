@@ -20,8 +20,8 @@ Instalação
 Desenvolvido por
 ------------
 
+* André Fillype
 * Andy Castro
 * Diogo Thiago
-* Fillype Pereira
 * Jorge Augusto
 * Rafael Dias
