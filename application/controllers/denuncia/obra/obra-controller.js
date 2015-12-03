@@ -6,40 +6,31 @@
     'use strict';
     angular.module('mwa').controller('ObraController', ObraController);
 
-    ObraController.$inject = ['$location', '$rootScope', 'SETTINGS', 'ObraFactory'];
+    ObraController.$inject = ['$location', '$rootScope', 'SETTINGS'];
 
-    function ObraController($location, $rootScope, SETTINGS, ObraFactory) {
+    function ObraController($location, $rootScope, SETTINGS) {
+        var obras;
+        getDenunciasObras();
+
+
         function getDenunciasObras() {
-            var obras;
 
-            obras: ObraFactory.getDenunciasObras()
-                        .success(success)
-                        .catch(fail);
+            var connection = new Firebase(SETTINGS.SERVICE_URL);
+            //alert(connection.child("users"));
+            obras = getListDenunciasObras();
 
-            function success(response) {
-                $rootScope.obras = obras;
-                $location.path('/');
-            }
+            function getListDenunciasObras() {
+                var DenunciaTexto;
+                var DatabaseResults;
 
-            function fail(error) {
-                toastr.error(error.data.error_description, 'Falha na obtenção de denúncias relacionadas à obras.');
-            }
-        }
+                connection.child("users").on("value", function(snapshot) {
+                    DatabaseResults = snapshot.val();
+                    DenunciaTexto = DatabaseResults.DenunciaTexto;
+                }, function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                });
 
-        function setRespostaDenunciasObras() {
-            var resposta = $('RespostaTCE').val();
-            var id = $('Id').val();
-
-            ObraFactory.setRespostaDenunciasObras(resposta, id)
-                .success(success)
-                .catch(fail);
-
-            function success(response) {
-                $location.path('/');
-            }
-
-            function fail(error) {
-                toastr.error(error.data.error_description, 'Falha no momento de inserir a resposta.');
+                return DenunciaTexto;
             }
         }
     };
