@@ -11,7 +11,7 @@
 
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
             if ($rootScope.user == null) {
-                $location.path("/login");
+                $location.path("/obras");
             }
         });
     });

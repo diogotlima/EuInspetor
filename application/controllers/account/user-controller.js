@@ -3,7 +3,7 @@
  */
 (function() {
     'use strict';
-    angular.module('insta').controller('LoginCtrl', LoginCtrl);
+    angular.module('mwa').controller('LoginCtrl', LoginCtrl);
 
     LoginCtrl.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS'];
 

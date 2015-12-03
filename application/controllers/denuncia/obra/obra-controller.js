@@ -6,16 +6,16 @@
     'use strict';
     angular.module('mwa').controller('ObraController', ObraController);
 
-    ObraController.$inject = ['$location', '$rootScope', 'SETTINGS'];
+    ObraController.$inject = ['$location', '$rootScope', 'APP_SETTINGS'];
 
-    function ObraController($location, $rootScope, SETTINGS) {
+    function ObraController($location, $rootScope, APP_SETTINGS) {
         var obras;
         getDenunciasObras();
 
 
         function getDenunciasObras() {
 
-            var connection = new Firebase(SETTINGS.SERVICE_URL);
+            var connection = new Firebase(APP_SETTINGS.FIREBASE_URL);
             //alert(connection.child("users"));
             obras = getListDenunciasObras();
 
