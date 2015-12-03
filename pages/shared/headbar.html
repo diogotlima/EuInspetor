@@ -1,3 +1,4 @@
+<div ng-show="user">
 <header id="header" class="page-topbar">
     <div class="navbar-fixed">
         <nav>
@@ -19,7 +20,7 @@
                 <ul class="altura-menu right hide-on-med-and-down">
                     <li>
                         <a class="dropdown-button menu-perfil" href="#" data-activates="dropdown1">
-                            Rafael Dias Santos<i class="mdi-navigation-arrow-drop-down right"></i>
+                            {{user}}<i class="mdi-navigation-arrow-drop-down right"></i>
                             <div style="font-size: 10px;">Tribunal de Contas do RN</div>
                         </a>
                         <ul id="dropdown1" class="dropdown-content">
@@ -83,3 +84,4 @@
 </footer>
 
 <div id="lean-overlay" class="" style="display: none; opacity: 0.5;"></div>
+</div>

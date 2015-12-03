@@ -1,38 +1,38 @@
-/**
- * Created by diogo on 01/12/15.
- */
 (function() {
     'use strict';
-    angular.module('insta').controller('LoginCtrl', LoginCtrl);
+    angular.module('mwa').controller('LoginController', LoginController);
 
-    LoginCtrl.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS'];
+    LoginController.$inject = ['$scope', '$rootScope', '$firebaseAuth','$location', 'APP_SETTINGS'];
 
-    function LoginCtrl($scope, $rootScope, $location, APP_SETTINGS) {
+    function LoginController($scope, $rootScope, $firebaseAuth , $location, APP_SETTINGS) {
         var vm = this;
         var ref = new Firebase(APP_SETTINGS.FIREBASE_URL);
 
-        vm.facebookLogin = doFacebookLogin;
+    vm.login =  {
+    email: '',
+    password: ''}
+
+        vm.autenticacao = Login;
         vm.logout = logout;
         vm.navigate = navigate;
 
         activate();
 
         function activate() {
-            //ref.onAuth(authDataCallback);
         }
 
-        function doFacebookLogin() {
-            ref.authWithOAuthPopup("facebook", function(error, authData) {
+        function Login() {
+            ref.authWithPassword(vm.login, function(error, authData) {
                 if (error) {
                     console.log("Falha no login!!", error);
+                    alert(vm.login);
                 }else{
                     $rootScope.user = {
-                        name: authData.facebook.displayName,
-                        email: authData.facebook.email,
-                        image: authData.facebook.profileImageURL
+                        email: vm.login.email
                     };
                     $location.path('/');
                     $scope.$apply();
+                    alert(email);
                 }
             }, {
                 scope: "email"
