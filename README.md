@@ -25,8 +25,8 @@ Instalação
 Desenvolvido por
 ------------
 
-* André Fillype
-* Andy Castro
-* Diogo Thiago
-* Jorge Augusto
-* Rafael Dias
+* André Fillype (https://github.com/andrefillypesilva)
+* Andy Castro (https://github.com/andycastro)
+* Diogo Thiago (https://github.com/diogotlima/)
+* Jorge Augusto (https://github.com/jorgedantas)
+* Rafael Dias (https://github.com/rds008)
