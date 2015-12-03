@@ -16,6 +16,11 @@
                 controllerAs: 'vm',
                 templateUrl: 'Login/login.html'
             })
+            .when('/obras', {
+                controller: 'ObraController',
+                controllerAs: 'vm',
+                templateUrl: 'TimeLine/index.html'
+            })
             .when('/logout', {
                 controller: 'LogoutController',
                 controllerAs: 'vm',

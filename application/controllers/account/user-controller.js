@@ -1,39 +1,53 @@
 /**
  * Created by diogo on 01/12/15.
  */
-(function () {
+(function() {
     'use strict';
-    angular.module('mwa').controller('LoginController', LoginController);
+    angular.module('mwa').controller('LoginCtrl', LoginCtrl);
 
-    LoginController.$inject = ['$rootScope', 'LoginFactory'];
+    LoginCtrl.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS'];
 
-    function LoginController($rootScope, LoginFactory) {
+    function LoginCtrl($scope, $rootScope, $location, APP_SETTINGS) {
         var vm = this;
-        vm.login = {
-            email: '',
-            password: ''
-        };
-        vm.submit = login;
+        var ref = new Firebase(APP_SETTINGS.FIREBASE_URL);
+
+        vm.facebookLogin = doFacebookLogin;
+        vm.logout = logout;
+        vm.navigate = navigate;
 
         activate();
 
         function activate() {
-
+            //ref.onAuth(authDataCallback);
         }
-        function login() {
-            LoginFactory.login(vm.login)
-                .success(success)
-                .catch(fail);
 
-            function success(response) {
-                $rootScope.user = vm.login.email;
-                $location.path('/');
-            }
-
-            function fail(error) {
-                toastr.error(error.data.error_description, 'Falha na autenticação');
-            }
+        function doFacebookLogin() {
+            ref.authWithOAuthPopup("facebook", function(error, authData) {
+                if (error) {
+                    console.log("Falha no login!!", error);
+                }else{
+                    $rootScope.user = {
+                        name: authData.facebook.displayName,
+                        email: authData.facebook.email,
+                        image: authData.facebook.profileImageURL
+                    };
+                    $location.path('/');
+                    $scope.$apply();
+                }
+            }, {
+                scope: "email"
+            });
         }
-    };
+
+        function logout() {
+            ref.unauth();
+            $rootScope.user = null;
+            localStorage.removeItem("firebase:session::5517");
+            $location.path('/login');
+        }
+
+        function navigate(path) {
+            $location.path(path + '/');
+        }
+    }
 })();
-
