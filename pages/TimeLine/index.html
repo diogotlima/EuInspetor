@@ -1,3 +1,50 @@
+<!--<div class=" grey lighten-3">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col s12 m12 l12">-->
+                <!--<ol class="breadcrumb">-->
+                    <!--<li>-->
+                        <!--<a href="#">Páginas</a>-->
+                    <!--</li>-->
+                    <!--<li class="active">Denúncias</li>-->
+                <!--</ol>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<ul id="tabs" class="tabs z-depth-1">-->
+    <!--<li class="tab col s3">-->
+        <!--<a class="active" href="#form" id="tituloTab">Indicadores</a>-->
+    <!--</li>-->
+<!--</ul>-->
+
+<!--<div class="container" ng-controller="HomeController as hc">-->
+    <!--<div class="section" ng-repeat="denuncia in denuncias">-->
+        <!--<div id="consulta" class="row">-->
+
+            <!--<div class="col l6">-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<img src="../content/images/sample-1.jpg" alt="sample image">-->
+                        <!--&lt;!&ndash;<span class="card-title">Card Title</span>&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<p>{{ $index }}: {{ denuncia.denunciaTexto[0].DenunciaTexto }}</p>-->
+                    <!--</div>-->
+                    <!--<div class="card-action">-->
+
+                        <!--<a href="#"><i class="mdi-action-thumb-up"></i> Concordam ({{ denuncia.concordam[0].curtidas }})</a>-->
+                        <!--<a href="#"><i class="mdi-action-thumb-down"></i> Discordam ({{denuncia.discordam[0].naoCurtidas}}) </a>-->
+                        <!--<a href="#"><i class="mdi-communication-message"></i> Comentar</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
 <div class=" grey lighten-3">
     <div class="container">
         <div class="row">
@@ -24,13 +71,13 @@
         <div id="consulta" class="row">
 
             <div class="col l6">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="../content/images/sample-1.jpg" alt="sample image">
+                <div class="card" ng-init="fotos = denuncia.images">
+                    <div class="card-image" ng-repeat="foto in fotos">
+                        <img ng-src="data:image/jpeg;base64,{{ foto.image }}">
                         <!--<span class="card-title">Card Title</span>-->
                     </div>
                     <div class="card-content">
-                        <p>{{ $index }}: {{ denuncia.denunciaTexto[0].DenunciaTexto }}</p>
+                        <p>{{ denuncia.denunciaTexto[0].DenunciaTexto }}</p>
                     </div>
                     <div class="card-action">
 

@@ -1,6 +1,11 @@
 /**
  * Created by andrefillype on 03/12/15.
  */
+
+/**
+ * Created by JorgeDantas on 03/12/2015.
+ */
+
 (function () {
     'use strict';
     angular.module('mwa').controller('IndicadoresController', IndicadoresController);

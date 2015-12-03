@@ -5,7 +5,6 @@
 <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 
 
-
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["map"]});
 
@@ -15,6 +14,8 @@
             ['Lat', 'Long', 'Name'],
             ['Prefeitura Municipal de Tuparetama,Tuparetama,pe', 'Denuncia 01','Work'],
             ['Prefeitura Municipal de Ipojuca,Ipojuca,pe', 'Denuncia 02','Work'],
+            ['Prefeitura Municipal de Chã Grande,pe', 'Denuncia 02','Work'],
+            ['Câmara Municipal de Tacaimbó,pe', 'Denuncia 02','Work'],
             ['Departamento de Estradas de Rodagem do Estado de Pernambuco,Caruaru,pe', 'Denuncia 03','Work']
 
         ]);
@@ -156,17 +157,123 @@
 
             // RPM
             chart = $('#container-rpm').highcharts();
+
+        }, 2000);
+
+
+    });
+    $(function () {
+
+        var gaugeOptions = {
+
+            chart: {
+                type: 'solidgauge'
+            },
+
+            title: null,
+
+            pane: {
+                center: ['50%', '85%'],
+                size: '140%',
+                startAngle: -90,
+                endAngle: 90,
+                background: {
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                    innerRadius: '60%',
+                    outerRadius: '100%',
+                    shape: 'arc'
+                }
+            },
+
+            tooltip: {
+                enabled: false
+            },
+
+            // the value axis
+            yAxis: {
+                stops: [
+                    [0.1, '#55BF3B'], // green
+                    [0.5, '#DDDF0D'], // yellow
+                    [0.9, '#DF5353'] // red
+                ],
+                lineWidth: 0,
+                minorTickInterval: null,
+                tickPixelInterval: 400,
+                tickWidth: 0,
+                title: {
+                    y: -70
+                },
+                labels: {
+                    y: 16
+                }
+            },
+
+            plotOptions: {
+                solidgauge: {
+                    dataLabels: {
+                        y: 5,
+                        borderWidth: 0,
+                        useHTML: true
+                    }
+                }
+            }
+        };
+
+        // The speed gauge
+        $('#container-speed').highcharts(Highcharts.merge(gaugeOptions, {
+            yAxis: {
+                min: 0,
+                max: 200,
+                title: {
+                    text: 'Licitações'
+                }
+            },
+
+            credits: {
+                enabled: false
+            },
+
+            series: [{
+                name: 'Speed',
+                data: [80],
+                dataLabels: {
+                    format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                    ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                    '<span style="font-size:12px;color:silver">Popularidade</span></div>'
+                },
+                tooltip: {
+                    valueSuffix: ' Popularidade '
+                }
+            }]
+
+        }));
+
+
+
+
+        // Bring life to the dials
+        setInterval(function () {
+            // Speed
+            var chart = $('#container-speed').highcharts(),
+                    point,
+                    newVal,
+                    inc;
+
             if (chart) {
                 point = chart.series[0].points[0];
-                inc = Math.random() - 0.5;
+                inc = 5;
                 newVal = point.y + inc;
 
-                if (newVal < 0 || newVal > 5) {
+                if (newVal < 0 || newVal > 200) {
                     newVal = point.y - inc;
                 }
 
-                point.update(newVal);
+                point.update(20);
             }
+
+            // RPM
+            chart = $('#container-rpm').highcharts();
+
         }, 2000);
 
 
