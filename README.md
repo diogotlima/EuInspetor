@@ -21,6 +21,9 @@ Instalação
 4. Crie um novo usuário no Firebase para acessar a aplicação.
 5. Have fun! E ajude nossas Cortes de Contas a criarem um Brasil mais limpo!
 
+Estrutura do projeto
+-----------
+![Alt text](http://luatecnologia.com.br/Sitemap.png "Estrutura do projeto")
 
 Desenvolvido por
 ------------
