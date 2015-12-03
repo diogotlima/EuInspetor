@@ -8,7 +8,7 @@
     <h1>Obras</h1>
     <ul ng-controller="ObraController as oc">
         <li ng-repeat="obra in obras">
-            {{ obra.DenunciaTexto }}
+            {{ $index }}: {{ obra.denunciaTexto[0].DenunciaTexto }}
         </li>
     </ul>
 </body>

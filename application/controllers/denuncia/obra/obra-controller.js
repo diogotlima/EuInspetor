@@ -19,17 +19,19 @@
             //alert(connection.child("users"));
             obras = getListDenunciasObras();
 
+            $rootScope.obras = obras;
+
             function getListDenunciasObras() {
                 var DenunciaTexto;
                 var DatabaseResults;
 
                 connection.child("users").on("value", function(snapshot) {
                     DatabaseResults = snapshot.val();
-                    DenunciaTexto = DatabaseResults.DenunciaTexto;
+                    DenunciaTexto = DatabaseResults;
                 }, function (errorObject) {
                     console.log("The read failed: " + errorObject.code);
                 });
-
+                console.log(DenunciaTexto);
                 return DenunciaTexto;
             }
         }
