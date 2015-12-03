@@ -14,7 +14,11 @@ Funcionalidades
 
 Instalação
 -----------
-
+1. Faça o download da última versão da aplicação
+2. Extraia no seu servidor
+3. Crie uma conta no Firebase e substitua a url de conexão do banco no arquivo config.js, alterando a propriedade FIREBASE_URL.
+4. Crie um novo usuário no Firebase para acessar a aplicação.
+5. Have fun! E ajude nossas Cortes de Contas a criarem um Brasil mais limpo!
 
 
 Desenvolvido por
