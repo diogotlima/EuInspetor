@@ -7,7 +7,7 @@
     angular.module('mwa').config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'InicialController',
+                controller: 'HomeController',
                 controllerAs: 'vm',
                 templateUrl: 'Inicial/index.html'
             })

@@ -1,5 +1,5 @@
 
-<header id="header" class="page-topbar" ng-app="mwa">
+<header id="header" class="page-topbar " ng-show="user" >
     <div class="navbar-fixed" >
         <nav>
             <div class="nav-wrapper">
@@ -33,55 +33,10 @@
             </div>
         </nav>
     </div>
+
 </header>
 
-<div id="main">
-    <div class="wrapper">
-        <aside id="left-sidebar-nav">
-            <ul id="slide-out" class="side-nav fixed leftside-navigation">
-                <li class="user-details">
-                    <div class="row">
-                        <div class="col col s8 m8 l8">
-                            <a class="btn-flat dropdown-button white-text profile-btn" href="#">Eu, Inspetor</a>
-                            <p class="user-roal">Área Administrativa</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
 
-                        <!--<li class="bold active"><a class="collapsible-header waves-effect waves-cyan active"><i class="mdi-editor-insert-chart"></i> Indicadores</a>
-
-                        </li>-->
-                        <li class="bold active" ng-class="{active: activetab == '/obras'}"><a class="collapsible-header waves-effect waves-cyan active" href="#/obras"><i class="mdi-action-announcement"></i> Denúncias</a>
-
-                        </li>
-
-
-                    </ul>
-                </li>
-            </ul>
-        </aside>
-
-        <section id="content">
-            <div ng-include="'TimeLine/index.html'"></div>
-        </section>
-
-    </div>
-
-</div>
-
-<!-- START FOOTER -->
-<footer class="page-footer">
-    <div class="footer-copyright">
-        <div class="container">
-            <span>Eu, Inspetor</span>
-            <span class="right">Desenvolvimento: DIN - TCE RN</span>
-        </div>
-    </div>
-</footer>
-
-<div id="lean-overlay" class="" style="display: none; opacity: 0.5;"></div>
 
 
 

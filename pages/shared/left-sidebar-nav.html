@@ -1,0 +1,23 @@
+<aside id="left-sidebar-nav"  ng-show="user">
+    <ul id="slide-out" class="side-nav fixed leftside-navigation">
+        <li class="user-details">
+            <div class="row">
+                <div class="col col s8 m8 l8">
+                    <a class="btn-flat dropdown-button white-text profile-btn" href="#">Eu, Inspetor</a>
+                    <p class="user-roal">Área Administrativa</p>
+                </div>
+            </div>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold active" ng-class="{active: activetab == '/'}"><a class="collapsible-header waves-effect waves-cyan active" href="#/"><i class="mdi-action-announcement"></i> Início</a>
+
+                <li class="bold active" ng-class="{active: activetab == '/obras'}"><a class="collapsible-header waves-effect waves-cyan active" href="#/obras"><i class="mdi-action-announcement"></i> Denúncias</a>
+
+                </li>
+
+
+            </ul>
+        </li>
+    </ul>
+</aside>

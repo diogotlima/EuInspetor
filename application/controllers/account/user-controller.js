@@ -10,14 +10,14 @@
 
     vm.login =  {
     email: 'contato@andycastro.com.br',
-    password: '123'}
+    password: '123'};
 
         vm.autenticacao = Login;
         vm.logout = logout;
         vm.navigate = navigate;
 
         activate();
-''
+
         function activate() {
         }
 
@@ -31,7 +31,7 @@
                     $rootScope.user = {
                         email: vm.login.email
                     };
-                    $location.path('/indicadores');
+                    $location.path('/');
                     $scope.$apply();
 
                 }

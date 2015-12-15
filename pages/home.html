@@ -1,6 +1,6 @@
 <html ng-app="mwa">
 <head>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="../content/materialize.css" rel="stylesheet">
@@ -10,20 +10,26 @@
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 
-
-
 </head>
 <body>
 
 
-<div ng-show="user">
-    <div ng-include="'shared/headbar.html'"></div>
+
+<div ng-include="'shared/headbar.html'"></div>
+
+<div id="main">
+    <div id="wrapper">
+        <div ng-include="'shared/left-sidebar-nav.html'"></div>
+        <section id="content">
+            <div class="container">
+                <div  ng-view> </div>
+            </div>
+        </section>
+    </div>
 </div>
 
-<div ng-hide="user">
-    <div ng-view></div>
-</div>
 
+<div ng-include="'shared/footer.html'"></div>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="../bower_components/angular/angular.js"></script>
@@ -43,10 +49,10 @@
 <script type="text/javascript" src="../bower_components/firebase/firebase.js"></script>
 <script type="text/javascript" src="../bower_components/angularfire/dist/angularfire.js"></script>
 
-<script type="text/javascript"src="../bower_components/firebase/firebase.js"></script>
+<script type="text/javascript" src="../bower_components/firebase/firebase.js"></script>
 <script type="text/javascript" src="../bower_components/angularfire/dist/angularfire.js"></script>
 
-<script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
+<script type="text/javascript" src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>
 
 
 <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
